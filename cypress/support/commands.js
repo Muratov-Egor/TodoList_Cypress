@@ -10,6 +10,11 @@
 //
 //
 // -- This is a parent command --
+Cypress.Commands.add('openPage', (title, url) => {
+  cy.allure().step(title, () => {
+    cy.visit(url)
+  })
+})
 // Cypress.Commands.add('login', (email, password) => { ... })
 //
 //
