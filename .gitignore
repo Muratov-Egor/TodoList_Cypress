@@ -112,3 +112,4 @@ allure-results
 
 #cypress
 cypress/videos
+cypress/screenshots
