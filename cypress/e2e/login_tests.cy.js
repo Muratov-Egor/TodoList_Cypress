@@ -1,10 +1,15 @@
 import {allureTestInfo} from '../utils/AllureHelper'
-import {LoginForm} from '../elements/LoginForm'
-import {MessageSnackBar} from '../elements/MessageSnackBar'
+import {LoginPage} from '../pages/LoginPage'
+import {MessageSnackBar} from '../pages/MessageSnackBar'
+import {TodoPage} from '../pages/TodoPage'
+import {User} from '../models'
+import {LoginErrors} from '../texts'
+
 Cypress.on('uncaught:exception', () => {
   return false
 })
-describe('Tests login page', () => {
+
+describe('Login page tests', () => {
   beforeEach(() => {
     allureTestInfo({
       suite: 'Login Page',
@@ -14,20 +19,63 @@ describe('Tests login page', () => {
     })
   })
 
-  it('Login', () => {
-    const loginForm = new LoginForm()
-    const messageSnackBar = new MessageSnackBar()
+  it('Successful login', () => {
+    const loginForm = new LoginPage()
+    const todoPage = new TodoPage()
+    const user = new User()
 
-    cy.openPage('Open login page', '/')
-    messageSnackBar
-      .messageBlockIsNotExist()
+    cy.openPage('Open Login page', '/login')
     loginForm
-      .fillInEmail('email@email.com')
-      .fillInPassword('pass')
-      .clickLoginButton()
-    messageSnackBar
-      .messageBlockHasText('User not found')
-      .clickButtonCloseMessage()
-      .messageBlockIsNotExist()
+      .fillInLoginForm(user)
+    todoPage
+      .assertThatTodoPageIsDisplayed()
+  })
+
+  it('Show message email is empty', () => {
+    const loginForm = new LoginPage()
+    const message = new MessageSnackBar()
+    const user = new User()
+
+    cy.openPage('Open Login page', '/login')
+    loginForm
+      .fillInLoginForm({password: user.password})
+    message
+      .messageBlockHasText(LoginErrors.emailIsEmpty)
+  })
+
+  it('Show message password is empty', () => {
+    const loginForm = new LoginPage()
+    const message = new MessageSnackBar()
+    const user = new User()
+
+    cy.openPage('Open Login page', '/login')
+    loginForm
+      .fillInLoginForm({email: user.email})
+    message
+      .messageBlockHasText(LoginErrors.passwordIsEmpty)
+  })
+
+  it('Show message wrong password', () => {
+    const loginForm = new LoginPage()
+    const message = new MessageSnackBar()
+    const user = new User({password: 'wrongPassword'})
+
+    cy.openPage('Open Login page', '/login')
+    loginForm
+      .fillInLoginForm(user)
+    message
+      .messageBlockHasText(LoginErrors.wrongPassword)
+  })
+
+  it('Show message user not found', () => {
+    const loginForm = new LoginPage()
+    const message = new MessageSnackBar()
+    const user = new User({email: 'user@not.found'})
+
+    cy.openPage('Open Login page', '/login')
+    loginForm
+      .fillInLoginForm(user)
+    message
+      .messageBlockHasText(LoginErrors.userNotFound)
   })
 })

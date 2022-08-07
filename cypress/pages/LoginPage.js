@@ -1,7 +1,20 @@
 import {TEST_ATTRIBUTE} from '../utils/TestAttribute'
 import {allureStep} from '../utils/AllureHelper'
 
-export class LoginForm {
+export class LoginPage {
+  fillInLoginForm({email, password}) {
+    if (email) {
+      this.fillInEmail(email)
+    }
+    if (password) {
+      this.fillInPassword(password)
+    }
+
+    this.clickLoginButton()
+
+    return this
+  }
+
   fillInEmail(email) {
     allureStep(`Type ${email} in Email input`, () => {
       cy.get(INPUT_EMAIL)
