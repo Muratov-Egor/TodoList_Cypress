@@ -19,3 +19,10 @@ Cypress.Commands.add('loginRequest', () => {
     }))
   })
 })
+
+Cypress.Commands.add('deleteUser', (userId) => {
+  cy.request(
+    'DELETE',
+    `/api/profile/delete/${userId}`
+  )
+})
