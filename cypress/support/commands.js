@@ -29,3 +29,19 @@ Cypress.Commands.add('deleteUser', (userId) => {
   )
 })
 
+Cypress.Commands.add('deleteAllTask', () => {
+  cy.request(
+    'POST',
+    '/api/auth/login',
+    {...new User()}
+  ).then((res) => {
+    cy.request({
+      method: 'DELETE',
+      url: '/api/todolist/delete',
+      auth: {
+        'bearer': res.body.token
+      }
+    })
+  })
+})
+
