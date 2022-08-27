@@ -7,7 +7,7 @@ Cypress.Commands.add('openPage', (title, url) => {
   })
 })
 
-Cypress.Commands.add('loginRequest', () => {
+Cypress.Commands.add('login', () => {
   cy.request(
     'POST',
     '/api/auth/login',
@@ -20,9 +20,12 @@ Cypress.Commands.add('loginRequest', () => {
   })
 })
 
+Cypress.Commands.add('logout', () => cy.clearLocalStorage('userData'))
+
 Cypress.Commands.add('deleteUser', (userId) => {
   cy.request(
     'DELETE',
     `/api/profile/delete/${userId}`
   )
 })
+
