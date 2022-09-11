@@ -8,6 +8,8 @@ Cypress.on('uncaught:exception', () => {
 })
 
 describe('Registration tests', () => {
+  let userId
+
   beforeEach(() => {
     allureTestInfo({
       suite: 'Registration Page',
@@ -16,11 +18,10 @@ describe('Registration tests', () => {
       owner: 'Egor Muratov'
     })
 
-    cy.intercept('https://simpletodolist2022.herokuapp.com/api/auth/registration')
+    cy.intercept('/api/auth/registration')
       .as('registration')
   })
 
-  let userId
   it('Successful registration', () => {
     const registrationPage = new RegistrationPage()
     const message = new MessageSnackBar()
@@ -80,6 +81,6 @@ describe('Registration tests', () => {
   })
 
   after(() => {
-    cy.request('DELETE', `https://simpletodolist2022.herokuapp.com/api/profile/delete/${userId}`)
+    cy.deleteUser(userId)
   })
 })

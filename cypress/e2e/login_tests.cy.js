@@ -1,7 +1,7 @@
 import {allureTestInfo} from '../utils/AllureHelper'
 import {LoginPage} from '../pages/LoginPage'
 import {MessageSnackBar} from '../pages/MessageSnackBar'
-import {TodoPage} from '../pages/TodoPage'
+import {TodoPage} from '../pages/TodoPage/TodoPage'
 import {User} from '../models'
 import {LoginErrors} from '../texts'
 
