@@ -25,7 +25,7 @@ yarn cy:run
 [Look at the Cypress Dashboard](https://dashboard.cypress.io/projects/xdm5ap)
 
 ![alt "Cypress Dashboard Overview"](./img/CypressD_1.png "Cypress Dashboard Overview")
-
+---
 ![alt "Cypress Dashboard Specs"](./img/CypressD_2.png "Cypress Dashboard Specs")
 
 ---
@@ -48,16 +48,16 @@ yarn allure:clear
 [Look at the Allure Report Page](https://muratov-egor.github.io/TodoList_Cypress)
 
 ![alt "Allure Report Overview"](./img/AllureReport_1.png "Allure Report Overview")
-
+---
 ![alt "Allure Report Suites"](./img/AllureReport_2.png "Allure Report Suites")
-
+---
 ![alt "Allure Report Graphs"](./img/AllureReport_3.png "Allure Report Graphs")
 
 ---
 ## <img src="img/GitHubActionsLogo.png" width="180" height="60" align=center>  
 
 ![alt "GitHub Actions E2E on Chrome"](./img/GitHubActions_1.png "GitHub Actions E2E on Chrome")
-
+---
 ![alt "GitHub Actions_Results"](./img/GitHubActions_2.png "GitHub Actions Results")
-
+---
 ![alt "GitHub Actions Allure Page Built"](./img/GitHubActions_3.png "GitHub Actions Allure Page Build")
