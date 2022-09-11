@@ -1,0 +1,32 @@
+name: cypress
+on:
+  push:
+    branches:
+      - 'master'
+  pull_request:
+jobs:
+  basic-on-windows-v10:
+      runs-on: windows-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+
+        - name: Cypress tests
+          uses: ./
+          with:
+            working-directory: examples/v10/basic
+            build: npx cypress info
+            browser: chrome
+
+  basic-on-mac-v10:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cypress tests
+        uses: ./
+        with:
+          working-directory: examples/v10/basic
+          build: npx cypress info
+          browser: chrome
