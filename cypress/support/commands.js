@@ -45,3 +45,22 @@ Cypress.Commands.add('deleteAllTask', () => {
   })
 })
 
+Cypress.Commands.add('addTasks', (todos) => {
+  cy.request(
+    'POST',
+    '/api/auth/login',
+    {...new User()}
+  ).then(res => {
+    todos.map(todo => {
+      cy.request({
+        method: 'POST',
+        url: '/api/todolist/add',
+        auth: {
+          'bearer': res.body.token
+        },
+        body: {title: todo.title}
+      })
+    })
+  })
+})
+
