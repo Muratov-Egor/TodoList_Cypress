@@ -28,6 +28,8 @@ yarn cy:run
 
 ![alt "Cypress Dashboard Specs"](./img/CypressD_2.png "Cypress Dashboard Specs")
 
+---
+
 ### <img src="img/reportlogo.svg" width="120" height="60" align=center>
 ## How to use:
 ### Run Allure report:
@@ -50,3 +52,12 @@ yarn allure:clear
 ![alt "Allure Report Suites"](./img/AllureReport_2.png "Allure Report Suites")
 
 ![alt "Allure Report Graphs"](./img/AllureReport_3.png "Allure Report Graphs")
+
+---
+## <img src="img/GitHubActionsLogo.png" width="180" height="60" align=center>  
+
+![alt "GitHub Actions E2E on Chrome"](./img/GitHubActions_1.png "GitHub Actions E2E on Chrome")
+
+![alt "GitHub Actions_Results"](./img/GitHubActions_2.png "GitHub Actions Results")
+
+![alt "GitHub Actions Allure Page Built"](./img/GitHubActions_3.png "GitHub Actions Allure Page Build")
