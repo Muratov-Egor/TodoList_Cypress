@@ -2,7 +2,7 @@ name: End-to-end tests
 on: [push]
 jobs:
   cypress-run:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     name: E2E on Chrome
     steps:
       - name: Checkout
