@@ -5,9 +5,8 @@
 |:-----------------------------------------------------:|:--------------------------------------------------:|:--------------------------------------------------------:|:---------------------------------------------------:|:--------------:|
 | <img src="img/JavaScript.png" width="40" height="40"> | <img src="img/Cypress.png" width="40" height="40"> | <img src="img/GitHubActions.png" width="40" height="40"> | <img src="img/CypressD.png" width="80" height="40"> |<img src="img/AllureReport.png" width="40" height="40">|
 ---
-
-### <img src="img/CypressD.png" width="120" height="60" align=center> 
-
+## <img src="img/CypressD.png" width="120" height="60" align=center>  
+## How to use:
 ### Run all tests locally with UI:
 ```
 yarn cy:open
@@ -30,7 +29,7 @@ yarn cy:run
 ![alt "Cypress Dashboard Specs"](./img/CypressD_2.png "Cypress Dashboard Specs")
 
 ### <img src="img/reportlogo.svg" width="120" height="60" align=center>
-
+## How to use:
 ### Run Allure report:
 ```
 yarn allure:report
@@ -42,3 +41,12 @@ yarn allure:report
 ```
 yarn allure:clear
 ```
+
+### Allure Reports: 
+[Look at the Allure Report Page](https://muratov-egor.github.io/TodoList_Cypress)
+
+![alt "Allure Report Overview"](./img/AllureReport_1.png "Allure Report Overview")
+
+![alt "Allure Report Suites"](./img/AllureReport_2.png "Allure Report Suites")
+
+![alt "Allure Report Graphs"](./img/AllureReport_3.png "Allure Report Graphs")
