@@ -1,5 +1,6 @@
 import {TodoPage} from '../pages/TodoPage/TodoPage'
 import {TodoList} from '../pages/TodoPage/TodoList'
+import {allureTestInfo} from '../utils/AllureHelper'
 
 const firstTask = {title: 'First task'}
 const secondTask = {title: 'Second task'}
@@ -12,7 +13,15 @@ const todos = [
 
 describe('Todo list tests', () => {
   before('Delete all tasks', () => cy.deleteAllTask())
-  beforeEach('login', () => cy.login())
+  beforeEach('login', () => {
+    allureTestInfo({
+      suite: 'Todo Page',
+      epic: 'Todo list',
+      tags: ['todo', 'regress', 'smoke'],
+      owner: 'Egor Muratov'
+    })
+    cy.login()
+  })
 
   it('Add new task', () => {
     const todoPage = new TodoPage()
