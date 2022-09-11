@@ -2,7 +2,7 @@ name: End-to-end tests
 on: [push]
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest
+    runs-on: ubunty-latest
     name: E2E on Chrome
     steps:
       - name: Checkout
@@ -14,4 +14,3 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           browser: chrome
-          record: true
