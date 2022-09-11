@@ -13,4 +13,5 @@ module.exports = defineConfig({
       return require('./cypress/plugins/index.js')(on, config)
     },
   },
+  projectId: "xdm5ap"
 });
